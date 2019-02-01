@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HPlusSports.ProductDetail">
     <ContentPage.Content>
         
-        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical"
+                     Padding="10, 20">
             <StackLayout Orientation="Horizontal">
                 <Label Text="Name:" />
                 <Label Text="ProductNamePlaceholder" />
@@ -16,7 +17,19 @@
             <Image Source="https://hplussport.com/wp-content/uploads/2016/12/v-neck-T-shirt-for-women_LYNDA_29948.jpg"
                    Aspect="AspectFit"
                    HorizontalOptions="FillAndExpand"
-                   VerticalOptions="Start" />   
+                   VerticalOptions="Start" />
+            
+            <RelativeLayout HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start" >
+                <Button Text="Order"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.25}"
+                        x:Name="OrderBtn">
+                </Button>
+                <Button Text="Favorite"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=OrderBtn, Property=X, Constant=100}">
+                </Button>
+                
+            </RelativeLayout>
         </StackLayout>
         
     </ContentPage.Content>
