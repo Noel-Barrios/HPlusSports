@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HPlusSports.ProductDetail">
     <ContentPage.Content>
-        <Label Text="Product Detail" />
+        
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name:" />
+                <Label Text="ProductNamePlaceholder" />
+            </StackLayout>
+        
+            <StackLayout Orientation="Vertical">
+                <Label Text="Description:" />
+                <Label Text="DescriptionPlaceholder" />
+            </StackLayout>
+            
+            <Image Source="https://hplussport.com/wp-content/uploads/2016/12/v-neck-T-shirt-for-women_LYNDA_29948.jpg"
+                   Aspect="AspectFit"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Start" />   
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
