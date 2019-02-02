@@ -27,7 +27,7 @@ namespace HPlusSports.Services
                 if(value != qty)
                 {
                     qty = value;
-                    //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(value));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("value"));
                 }
             }
         }

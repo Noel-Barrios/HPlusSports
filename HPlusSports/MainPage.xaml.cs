@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HPlusSports.Services;
 using Xamarin.Forms;
 
 namespace HPlusSports
@@ -14,10 +15,23 @@ namespace HPlusSports
             InitializeComponent();
         }
 
-        void Handle_Clicked(object sender, System.EventArgs e)
+        //void Handle_Clicked(object sender, System.EventArgs e)
+        //{
+        //    // push ProductDetail onto the Navigation stack.
+        //    Navigation.PushAsync(new ProductDetail());
+        //}
+
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            // push ProductDetail onto the Navigation stack.
-            Navigation.PushAsync(new ProductDetail());
+            Product target = e.Item as Product;
+            Navigation.PushAsync(new ProductDetail(target));
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            var products = await ProductService.GetProductAsync();
+            BindingContext = products;
         }
     }
 }
